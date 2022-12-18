@@ -1,6 +1,7 @@
 package com.example.my_task;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,7 +30,8 @@ public class ProductActivity extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl("https://fakestoreapi.com/")

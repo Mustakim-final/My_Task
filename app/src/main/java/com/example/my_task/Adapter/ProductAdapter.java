@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.my_task.R;
 import com.example.my_task.Response.AllProduct;
 
@@ -33,7 +35,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyHolder
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         AllProduct allProduct=allProductList.get(position);
+        Glide.with(context).load(allProduct.getImage()).into(holder.productImage);
         holder.textViewTitle.setText(allProduct.getTitle());
+        holder.textViewPrice.setText(String.valueOf(allProduct.getPrice()));
     }
 
     @Override
@@ -42,10 +46,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyHolder
     }
 
     public class MyHolder extends RecyclerView.ViewHolder{
-        TextView textViewTitle;
+        TextView textViewTitle,textViewPrice;
+        ImageView productImage;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             textViewTitle=itemView.findViewById(R.id.titleProduct);
+            productImage=itemView.findViewById(R.id.productImage_ID);
+            textViewPrice=itemView.findViewById(R.id.productPrize_ID);
         }
     }
 }
