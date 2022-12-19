@@ -57,6 +57,19 @@
             </TextView>
 
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_shopping_cart_24"
+                android:layout_toRightOf="@+id/productPrize_ID"
+                android:layout_below="@+id/titleProduct"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="60dp"
+                android:id="@+id/addCharBtn_ID">
+
+            </ImageView>
+
+
 
 
         </RelativeLayout>

@@ -2,11 +2,13 @@ package com.example.my_task;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.example.my_task.Adapter.ProductAdapter;
 import com.example.my_task.Response.AllProduct;
@@ -23,10 +25,31 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProductActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    ImageView btnBack;
+    FrameLayout btnCart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
+
+        btnBack=findViewById(R.id.backBtn);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        btnCart=findViewById(R.id.btnCart);
+
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ProductActivity.this, CartActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         recyclerView=findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
