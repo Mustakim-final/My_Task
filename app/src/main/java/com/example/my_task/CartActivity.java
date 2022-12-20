@@ -54,15 +54,17 @@ public class CartActivity extends AppCompatActivity {
             public void onResponse(Call<List<CartResponse>> call, Response<List<CartResponse>> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(CartActivity.this, "Show Cart Item", Toast.LENGTH_SHORT).show();
+
                     List<CartResponse> cartResponseList=response.body();
                     CartAdapter cartAdapter=new CartAdapter(CartActivity.this,cartResponseList);
                     recyclerView.setAdapter(cartAdapter);
+
                 }
             }
 
             @Override
             public void onFailure(Call<List<CartResponse>> call, Throwable t) {
-
+                Toast.makeText(CartActivity.this, "error:"+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -3,7 +3,7 @@ package com.example.my_task.ShowCartModel;
 public class CartResponse {
     private int id;
     private String userId,date;
-    private ProductArray products;
+    //private ProductArray products;
 
     public CartResponse() {
     }
@@ -34,11 +34,11 @@ public class CartResponse {
         this.date = date;
     }
 
-    public ProductArray getProducts() {
-        return products;
-    }
-
-    public void setProducts(ProductArray products) {
-        this.products = products;
-    }
+//    public ProductArray getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(ProductArray products) {
+//        this.products = products;
+//    }
 }
