@@ -15,11 +15,12 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface RetrofitModel {
 
     @GET("products")
-    Call<List<AllProduct>> getProduct();
+    Call<List<AllProduct>> getProduct(@Query("pageCount")int pageCount,@Query("perPage")int perPage);
 
     @FormUrlEncoded
     @POST("login")

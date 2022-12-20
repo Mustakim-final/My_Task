@@ -69,12 +69,29 @@
     </LinearLayout>
 
 
-
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_margin="10dp"
+        android:elevation="40dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler">
+        app:iconifiedByDefault="false"
+        app:queryHint="Search here...."
+        android:layout_height="wrap_content"/>
+    
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/nestedScrollView"
+        android:layout_height="match_parent">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </LinearLayout>
