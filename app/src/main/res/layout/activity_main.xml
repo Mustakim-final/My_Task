@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter username.."
                 android:textSize="20sp"
+                android:text="mor_2314"
                 android:layout_margin="20dp"
                 android:id="@+id/loginUsername_ID">
 

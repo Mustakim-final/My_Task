@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         RetrofitModel retrofitModel=retrofit.create(RetrofitModel.class);
-        Call<LoginResponseModel> call=retrofitModel.GetLogin("mor_2314","83r5^_");
+        Call<LoginResponseModel> call=retrofitModel.GetLogin(username,"83r5^_");
         call.enqueue(new Callback<LoginResponseModel>() {
             @Override
             public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                Toast.makeText(MainActivity.this, ""+response.body().getToken(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "token: "+response.body().getToken(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
